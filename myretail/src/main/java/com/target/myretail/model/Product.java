@@ -1,17 +1,8 @@
 package com.target.myretail.model;
 
-import org.springframework.data.annotation.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-//@JsonIgnoreProperties(ignoreUnknown=true)
 public class Product {
 
-//	@JsonProperty("product_id")
-//	@Id
 	private String productId;
-//	@JsonProperty("title")
 	private String title;
 	private Price price;
 

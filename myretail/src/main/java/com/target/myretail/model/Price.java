@@ -16,7 +16,7 @@ public class Price {
 	public Price() {
 	}
 
-	public Price(BigDecimal value, String currencyCode) {
+	public Price(String productId, BigDecimal value, String currencyCode) {
 		this.productId = productId;
 		this.value = value;
 		this.currencyCode = currencyCode;
