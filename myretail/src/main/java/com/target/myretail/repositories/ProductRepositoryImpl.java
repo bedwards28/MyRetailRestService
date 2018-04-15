@@ -1,5 +1,6 @@
 package com.target.myretail.repositories;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -7,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.target.myretail.exceptions.ProductNotFoundException;
 import com.target.myretail.model.Product;
@@ -21,7 +24,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public Product getProduct(String productId) throws ProductNotFoundException{
+	public Product getProduct(String productId) throws ProductNotFoundException {
+		
 		Product product = new Product();
 
 		String url = "https://redsky.target.com/v2/pdp/tcin/" + productId
@@ -41,8 +45,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 			product.setTitle(prodDescMap.get("title"));
 
 
-		} catch (Exception e) {
-			 throw new ProductNotFoundException("Product not found");
+		} catch (IOException e) {
+			 throw new ProductNotFoundException();
 		}
 
 		return product;
