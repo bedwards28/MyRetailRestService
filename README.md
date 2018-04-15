@@ -9,7 +9,6 @@ Maven 3.5.2
 
 SpringBoot 2.0.1.RELEASE
 
-EhCache
 
 Mongo DB database and collection
 database=myretail
@@ -42,7 +41,7 @@ Application will start running on port 8080
 Calling myretail api services
 Performing GET request on http://localhost:8080/products/13860428 will return json object with product information and pricing information.
 
-GET http://localhost:8082/products/13860428
+GET http://localhost:8080/products/13860428
 
 Response:-
 
@@ -54,7 +53,7 @@ PUT http://localhost:8080/product/13860428
 
 Request Body:-
 
-{ "id": 13860428, "productPrice": { "price": 10.00, "currencyCode": "USD" } }
+{ "productId": "13860428", "title": "The Big Lebowski (Blu-ray)", "price": { "value": 10.00, "currencyCode": "USD", "id": "13860428" } }
 
 Response :-
 
