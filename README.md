@@ -30,7 +30,7 @@ cd myretail
 
 Then run
 
-mvn clean package
+mvn clean install
 
 Then run the jar
 
