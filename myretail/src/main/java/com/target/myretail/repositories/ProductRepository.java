@@ -9,7 +9,6 @@ import com.target.myretail.model.Product;
 
 public interface ProductRepository {
 	
-	public Product getProduct(String productId) 
-			throws ProductNotFoundException, JsonParseException, JsonMappingException, IOException;
+	public Product getProduct(String productId) throws ProductNotFoundException;
 
 }
